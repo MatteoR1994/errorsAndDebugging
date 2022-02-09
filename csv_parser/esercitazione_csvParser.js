@@ -17,9 +17,12 @@
 
 
 let string = "12; 34; 45; 2.3; 12; 13,4; pippo";
-let string = "12; 34; 45; 2.3; 12; 13,4";
-let string = "sasso; piero; pluto; paperino; pippo; cane; pippo";
-let string = "";
+//let string = "12; 34; 45; 2.3; 12; 13,4";
+//let string = "12; 34; 45; 2,3; 12; 13,4";
+//let string = "sasso; piero; pluto; paperino; pippo; cane; pippo";
+//let string = "";
+
+console.log("Stringa originale: ", string);
 
 let result;
 
@@ -32,11 +35,13 @@ try {
 
     if (error instanceof EmptyStringError) {
         console.log(error.message);
-        age = 0;
-        console.log("age: ", age);
     } else {
-        console.log(error.message);
-        console.log("inserisci di nuovo");
+        if (error instanceof PartialInvalidStringError) {
+            console.log(error.message);
+            console.log("E' stata fatto un parsing parziale: ", error.partialResult);
+        } else {
+            console.log(error.message);
+        }
     }
 
 }
