@@ -4,12 +4,12 @@ class Parser {
     static csvParser(string) {
         let resultArray;
         let workString = string; // Creao una variabile con la quale lavorare.
-        // workString = "12; 34; 45; 2.3; 12; 13,4; pippo"
-        let noSpacesString = workString.replace(" ", ""); // Levo gli spazi dalla stringa sostituendoli con una stringa vuota.
-        let trimmedString = noSpacesString.trim(); // Levo gli spazi all'inizio e alla fine della stringa.
+        
+        let noSpacesString = workString.replace(/ /g, ""); // Levo tutti gli spazi dalla stringa sostituendoli con una stringa vuota.
+
         //let betterDecimalNumbersString= trimmedString.replace(",", "."); // Sostiuisco una sola virgola (la prima che trova) con il punto.
-        let betterDecimalNumbersString= trimmedString.replace(/,/g, "."); // Sostiuisco tutte le virgole con il punto.
-        // betterDecimalNumbersString = "12;34;45;2.3;12;13.4;pippo"
+        let betterDecimalNumbersString= noSpacesString.replace(/,/g, "."); // Sostiuisco tutte le virgole con il punto.
+
         //let resultArray = this.betterParseStringToNumber(betterDecimalNumbersString);
         try {
             resultArray = this.betterParseStringToNumber(betterDecimalNumbersString);

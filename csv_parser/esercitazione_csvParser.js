@@ -16,10 +16,10 @@
 //12; 34; 45; 2.3; 12; 13,4; pippo
 
 
-let string = "12; 34; 45; 2.3; 12; 13,4; pippo";
+//let string = "12; 34; 45; 2.3; 12; 13,4; pippo";
 //let string = "12; 34; 45; 2.3; 12; 13,4";
 //let string = "12; 34; 45; 2,3; 12; 13,4";
-//let string = "sasso; piero; pluto; paperino; pippo; cane; pippo";
+let string = "sasso; piero; pluto; paperino; pippo; cane; pippo";
 //let string = "";
 
 console.log("Stringa originale: ", string);
