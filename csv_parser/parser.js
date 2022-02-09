@@ -35,6 +35,8 @@ class Parser {
             }
         }
 
+        //let resultArray2 = stringArray.map(e => parseFloat(e)).filter(e => !isNaN(e));
+
         if (resultArray2.length === 0) {
             throw new InvalidStringError("Stringa non valida.");
         } else {
