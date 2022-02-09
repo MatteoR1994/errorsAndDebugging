@@ -5,12 +5,12 @@ class Parser {
         let resultArray;
         let workString = string; // Creao una variabile con la quale lavorare.
         
-        let noSpacesString = this.replaceAll(workString, " ", ""); // Levo tutti gli spazi dalla stringa sostituendoli con una stringa vuota.
+        let noSpacesString = Parser.replaceAll(workString, " ", ""); // Levo tutti gli spazi dalla stringa sostituendoli con una stringa vuota.
         
-        let betterDecimalNumbersString= this.replaceAll(noSpacesString, ",", "."); // Sostiuisco tutte le virgole con il punto.
+        let betterDecimalNumbersString= Parser.replaceAll(noSpacesString, ",", "."); // Sostiuisco tutte le virgole con il punto.
 
         try {
-            resultArray = this.betterParseStringToNumber(betterDecimalNumbersString);
+            resultArray = Parser.betterParseStringToNumber(betterDecimalNumbersString);
         } catch (error) {
             throw error;
         }
@@ -22,11 +22,11 @@ class Parser {
             throw new EmptyStringError("Stringa vuota.");
         }
 
-        let stringArray = this.stringToArrayByChar(string, ";");
+        let stringArray = Parser.stringToArrayByChar(string, ";");
 
-        let stringArrayMapped = this.arrayNumbersParser(stringArray, parseFloat);
+        let stringArrayMapped = Parser.arrayNumbersParser(stringArray, parseFloat);
 
-        let resultArray2 = this.checkIsNotNanEveryArrayElement(stringArrayMapped);
+        let resultArray2 = Parser.checkIsNotNanEveryArrayElement(stringArrayMapped);
 
         if (resultArray2.length === 0) {
             throw new InvalidStringError("Stringa non valida.");
