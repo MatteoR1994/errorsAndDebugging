@@ -1,6 +1,13 @@
 class Parser {
 
     // Convertire la stringa in un array di numeri
+
+    
+    /**
+     * It parses a string, with semicolon separated values, into an array of numbers.
+     * @param {string} string - The string to be parsed.
+     * @returns {number[]} The array of numbers.
+     */
     static csvParser(string) {
         let resultArray;
         let workString = string; // Creao una variabile con la quale lavorare.
