@@ -45,3 +45,34 @@ try {
     }
 
 }
+
+/*
+
+1° step) newLineParser (static)
+"12; 13; 45; 23\n
+2.1; 13; 34; 21\n
+3.2; 12; 4; 22\n"
+
+=> [12, 13, 45, 23, 2.1, 13, 34, 21, 3.2, 12, 4, 22]
+
+-----------------------------------------------
+
+2° step)
+"12; 13; 45; 23\n
+2.1; 13; 34; 21\n
+3.2; 12; 4; 22\n"
+
+=> [[12, 13, 45, 23], [2.1, 13, 34, 21], [3.2, 12, 4, 22]]
+
+-----------------------------------------------
+
+3° step)
+
+"name; age; school; grade\n
+pippo; 13; colombo; 3\n
+pluto; 12; leopardi; 2\n
+paperino; 11; bertani; 2\n"
+
+=> [{name: "pippo", age: 13, school: colombo, grade: 3}, {name: "pluto", age: 12, school: leopardi, grade: 2}, {name: "paperino", age: 11, school: bertani, grade: 2}]
+
+*/
