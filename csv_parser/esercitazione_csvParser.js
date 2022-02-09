@@ -108,26 +108,22 @@ const tableString = "name; age; school; grade\n" +
                     "pippo; 13; colombo; 3\n" + 
                     "pluto; 12; leopardi; 2\n" + 
                     "paperino; 11; bertani; 2\n";
+// const tableString = "name; age; school; grade\n" + 
+//                     "pippo; 13; colombo; 3\n" + 
+//                     "pluto; 12; 2\n" + 
+//                     "paperino; 11; bertani; 2\n";
 
 let resultStep3;
 
-// try {
-//     resultStep3 = Parser.arrayOfObjectsFromStringMultiline(stringNewLine);
-//     console.log("result step 2: ", resultStep3);
-// } catch (error) {
-//     if (error instanceof EmptyStringError) {
-//         console.log(error.message);
-//     } else {
-//         if (error instanceof PartialInvalidStringError) {
-//             console.log(error.message);
-//             console.log("E' stata fatto un parsing parziale: ", error.partialResult);
-//         } else {
-//             console.log(error.message);
-//         }
-//     }
-// }
-resultStep3 = Parser.arrayOfObjectsFromStringMultiline(tableString);
-console.log("result step 3: ", resultStep3);
+try {
+    resultStep3 = Parser.arrayOfObjectsFromStringMultiline(tableString);
+    console.log("result step 3: ", resultStep3);
+} catch (error) {
+    console.log(error.message);
+}
+
+// resultStep3 = Parser.arrayOfObjectsFromStringMultiline(tableString);
+// console.log("result step 3: ", resultStep3);
 
 /*
 

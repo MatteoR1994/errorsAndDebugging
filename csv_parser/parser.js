@@ -100,27 +100,31 @@ class Parser {
         // Pulisco, tramite una piccola funzioncina su misura, il primo elemento dell'array di stringhe, quello dell'intestazione
         // della tabella
         let tableName = Parser.cleanStringAndReturnAnArray(arrayOfStrings[0]);
-        
-        const finalArray = []; // Inizializzo l'array che conterrà gli oggetti finali
 
-        // Popolo gli oggetti con la proprietà, inizialmente vuota
-        for (const element of tableName) {
-            finalArray.push({[element]: ""});
-        }
-
-        // Popolo gli oggetti
-        for (let i = 1; i < arrayOfStrings.length; i++) { // Ciclo sulle altre righe dell'array di stringhe
-            const element = Parser.cleanStringAndReturnAnArray(arrayOfStrings[i]); // Tengo la stringa corrente, pulita con la funzione su misura
-            for (const string of element) { // Ciclo ogni elemento dell'array generato dalla stringa nell'array di stringhe
-                const stringParsed = parseFloat(string); // Faccio il parse
-                if (!isNaN(stringParsed)) { // Se è un numero
-                    
-                } else {
-                    
-                }
+        for (const element of arrayOfStrings) {
+            let stringArray = Parser.cleanStringAndReturnAnArray(element);
+            if (stringArray.length < tableName.length) {
+                throw new PotentialartialInvalidStringError("Qualcosa non va nel file, controllalo.");
             }
         }
         
+        const finalArray = []; // Inizializzo l'array che conterrà gli oggetti finali
+   
+        for (let i = 1; i < arrayOfStrings.length; i++) {
+            const value = arrayOfStrings[i];
+            let obj = {};
+            let parsedArray = Parser.cleanStringAndReturnAnArray(value);
+            for (let a = 0; a < tableName.length; a++) {
+                const propertyName = tableName[a];
+                if (!isNaN(parsedArray[a])) {
+                    obj[propertyName] = parseFloat(parsedArray[a]);
+                } else {
+                    obj[propertyName] = parsedArray[a]
+                }
+            }
+            finalArray.push(obj);        
+        }
+
         return finalArray;
     }
 

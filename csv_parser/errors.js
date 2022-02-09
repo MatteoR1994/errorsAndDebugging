@@ -16,3 +16,9 @@ class PartialInvalidStringError extends Error{
         this.partialResult = partialResult
     }
 }
+
+class PotentialartialInvalidStringError extends Error{
+    constructor(message){
+        super(message);
+    }
+}
