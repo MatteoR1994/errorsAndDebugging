@@ -22,17 +22,15 @@ let string = "12; 34; 45; 2.3; 12; 13,4; pippo";
 //let string = "sasso; piero; pluto; paperino; pippo; cane; pippo";
 //let string = "";
 
+console.log("STRINGA SU UNA LINEA\n\n");
 console.log("Stringa originale: ", string);
 
 let result;
 
 try {
-
     result = Parser.csvParser(string);
     console.log("result: ", result);
-
 } catch (error) {
-
     if (error instanceof EmptyStringError) {
         console.log(error.message);
     } else {
@@ -43,7 +41,45 @@ try {
             console.log(error.message);
         }
     }
+}
 
+console.log("\n\n------------------------------------------\n\n");
+
+let stringNewLine = "12; 13; 45; 23\n" +
+                    "2.1; 13; 34; 21\n" + 
+                    "3.2; 12; 4; 22\n";
+// let stringNewLine = "12; 13; 45,36; 23\n" +
+//                     "2,1; 13; 34; 21\n" + 
+//                     "3.2; 12; 4; 22\n";
+// let stringNewLine = "12; 13; pippo; 23\n" +
+//                     "2.1; 13; 34; 21\n" + 
+//                     "3.2; pluto; 4; 22\n";
+// let stringNewLine = "pluto; pluto; pluto; pluto\n" +
+//                     "pluto; pluto; pluto; pluto\n" + 
+//                     "pluto; pluto; pluto; pluto\n";
+// let stringNewLine = "\n" +
+//                     "\n" + 
+//                     "\n";
+
+console.log("STRINGA SU PIU' LINEE\n\n");
+console.log("Stringa originale: ", stringNewLine);
+
+let resultNewLine;
+
+try {
+    resultNewLine = Parser.newLineStringParser(stringNewLine);
+    console.log("result: ", resultNewLine);
+} catch (error) {
+    if (error instanceof EmptyStringError) {
+        console.log(error.message);
+    } else {
+        if (error instanceof PartialInvalidStringError) {
+            console.log(error.message);
+            console.log("E' stata fatto un parsing parziale: ", error.partialResult);
+        } else {
+            console.log(error.message);
+        }
+    }
 }
 
 /*

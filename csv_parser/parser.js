@@ -48,4 +48,22 @@ class Parser {
         }
     }
 
+    static newLineStringParser(string) {
+        if (string.length === 0) {
+            throw new EmptyStringError("Stringa vuota.");
+        }
+        const arrayOfStrings = string.split(/\r?\n/);
+        arrayOfStrings.pop();
+        const stringArray2 = arrayOfStrings.join(";");
+        // console.log(arrayOfStrings);
+        // console.log(stringArray2);
+        let resultArray3;
+        try {
+            resultArray3 = Parser.csvParser(stringArray2);
+        } catch (error) {
+            throw error;
+        }
+        return resultArray3;
+    }
+
 }
