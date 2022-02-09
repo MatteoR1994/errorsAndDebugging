@@ -53,7 +53,7 @@ class Parser {
     }
 
     static checkIsNotNanEveryArrayElement(array) {
-        return array.filter(e => !isNaN(e))
+        return array.filter(e => !isNaN(e));
     }
 
 }

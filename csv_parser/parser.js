@@ -12,7 +12,7 @@ class Parser {
 
         //let resultArray = this.betterParseStringToNumber(betterDecimalNumbersString);
         try {
-            resultArray = this.betterParseStringToNumber(betterDecimalNumbersString);
+            resultArray = Parser.betterParseStringToNumber(betterDecimalNumbersString);
         } catch (error) {
             throw error;
         }
