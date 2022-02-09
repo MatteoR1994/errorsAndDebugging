@@ -4,15 +4,11 @@
     stringa vuota, errore stringa vuota
     stringa tutta non valida, errore stringa non valida
     stringa tutta valida, ritorna array di numeri 
-    */
 
-    /*
     la funzione deve essere in una classe statica
 
     gli errori tutti in un file a parte
-    */
-
-
+*/
 
 
 // Un file con una sola stringa in ingresso, così costruita:
@@ -21,6 +17,9 @@
 
 
 let string = "12; 34; 45; 2.3; 12; 13,4; pippo";
+let string = "12; 34; 45; 2.3; 12; 13,4";
+let string = "sasso; piero; pluto; paperino; pippo; cane; pippo";
+let string = "";
 
 let result;
 
