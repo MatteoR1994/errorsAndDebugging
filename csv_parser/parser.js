@@ -55,8 +55,6 @@ class Parser {
         const arrayOfStrings = string.split(/\r?\n/);
         arrayOfStrings.pop();
         const stringArray2 = arrayOfStrings.join(";");
-        // console.log(arrayOfStrings);
-        // console.log(stringArray2);
         let resultArray3;
         try {
             resultArray3 = Parser.csvParser(stringArray2);

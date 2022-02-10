@@ -62,7 +62,7 @@ let stringNewLine = "12; 13; pippo; 23\n" +
 //                     "\n";
 
 console.log("STRINGA SU PIU' LINEE\n\n");
-console.log("Stringa originale: ", stringNewLine);
+console.log("Stringa originale: \n\n", stringNewLine);
 
 console.log("\nSTEP 1\n");
 let resultNewLine;
@@ -112,6 +112,8 @@ const tableString = "name; age; school; grade\n" +
 //                     "pippo; 13; colombo; 3\n" + 
 //                     "pluto; 12; 2\n" + 
 //                     "paperino; 11; bertani; 2\n";
+
+console.log("Stringa table originale:\n\n", tableString);
 
 let resultStep3;
 
